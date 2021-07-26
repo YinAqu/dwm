@@ -80,6 +80,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *chrome[]  = { "chromium", NULL };
+static const char *copyq[]  = { "copyq", "show" };
+static const char *flameshot[]  = { "flameshot", "gui", "-p", "/tmp", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
@@ -88,7 +90,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_semicolon,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
-	{ MODKEY,                       XK_v,      spawn,          {.v = chrome } },
+	{ MODKEY,                       XK_b,      spawn,          {.v = chrome } },
+	{ MODKEY,                       XK_v,      spawn,          {.v = copyq } },
+	{ MODKEY,                       XK_a,      spawn,          {.v = flameshot } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstackvis,  {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstackvis,  {.i = -1 } },
