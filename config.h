@@ -82,6 +82,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *chrome[]  = { "chromium", NULL };
 static const char *copyq[]  = { "copyq", "show" };
 static const char *flameshot[]  = { "flameshot", "gui", "-p", "/tmp", NULL };
+static const char *joplin[]  = { "/opt/appimages/Joplin.AppImage" };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
@@ -93,6 +94,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_b,      spawn,          {.v = chrome } },
 	{ MODKEY,                       XK_v,      spawn,          {.v = copyq } },
 	{ MODKEY,                       XK_a,      spawn,          {.v = flameshot } },
+	{ MODKEY,                       XK_x,      spawn,          {.v = joplin } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstackvis,  {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstackvis,  {.i = -1 } },
