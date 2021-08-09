@@ -49,6 +49,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor ignoretransient */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 ,    0},
 	{ "jetbrains-phpstorm",  NULL,       NULL,       0,       0,           -1 ,    1},
+	{ "dbeaver",     NULL,       NULL,       0,            1,           -1 ,    1},
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 ,    0},
 };
 
@@ -61,7 +62,7 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "平铺",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "浮动",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
 
@@ -83,7 +84,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *chrome[]  = { "chromium", NULL };
 static const char *copyq[]  = { "copyq", "show" };
 static const char *flameshot[]  = { "flameshot", "gui", "-p", "/tmp", NULL };
-static const char *joplin[]  = { "/opt/appimages/Joplin.AppImage" };
+static const char *subl[]  = { "subl" };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
@@ -95,7 +96,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_b,      spawn,          {.v = chrome } },
 	{ MODKEY,                       XK_v,      spawn,          {.v = copyq } },
 	{ MODKEY,                       XK_a,      spawn,          {.v = flameshot } },
-	{ MODKEY,                       XK_x,      spawn,          {.v = joplin } },
+	{ MODKEY,                       XK_x,      spawn,          {.v = subl } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstackvis,  {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstackvis,  {.i = -1 } },
