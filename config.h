@@ -83,14 +83,16 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *chrome[]  = { "chromium", NULL };
 static const char *copyq[]  = { "copyq", "toggle" };
-static const char *flameshot[]  = { "flameshot", "gui", "-p", "/tmp", NULL };
+static const char *flameshot[]  = { "flameshot", "gui", NULL };
 static const char *subl[]  = { "subl" };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+	// dmenu
 	{ MODKEY,                       XK_semicolon,      spawn,          {.v = dmenucmd } },
+	// 开启一个终端
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = chrome } },
